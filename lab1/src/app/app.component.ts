@@ -13,7 +13,7 @@ export class AppComponent {
     hoten: 'Đoàn Dương Thành Luân',
     gioitinh: 'Nam',
     ngaysinh: '16-04-2001',
-    hinh: 'dau-la-dai-luc-ngoai-truyen-duong-mon-an-9991.jpg',
+    hinh: 'photo-1484312152213-d713e8b7c053.avif',
     diem: 7
   }
   
