@@ -61,7 +61,7 @@ export class AppComponent {
   render(){
     let codehtml = this.listNhaKH.map(nkh=>{
       return `
-        <p>${nkh.id}. ${nkh.ho} ${nkh.ten} (${nkh.sinh} - ${nkh.mat})</p>
+        <p class="nkh">${nkh.id}. ${nkh.ho} ${nkh.ten} (${nkh.sinh} - ${nkh.mat})</p>
       `
     }).join('');
     this.show(codehtml);
