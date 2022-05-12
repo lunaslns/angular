@@ -16,6 +16,7 @@ export class AppComponent {
     hinh: 'dau-la-dai-luc-ngoai-truyen-duong-mon-an-9991.jpg',
     diem: 7
   }
+  
   listNhaKH:NhaKhoaHoc[] = [
     {
       id:1, 
@@ -65,6 +66,7 @@ export class AppComponent {
     }).join('');
     this.show(codehtml);
   }
+
   listSP:ISanpham[] = [
     {
       id:1, 
