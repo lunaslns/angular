@@ -34,8 +34,8 @@
             </li> -->
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Từ khóa" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Tìm</button>
           </form>
         </div>
       </div>
@@ -44,13 +44,27 @@
   <main>
     <article class="col-md-9 bg-light">
       <div [ngSwitch]="true">
-        <div *ngSwitchCase="chucNang=='sp'">Sản phẩm</div>
-        <div *ngSwitchCase="chucNang=='dn'">Đăng nhập</div>
-        <div *ngSwitchCase="chucNang=='lh'">Liên hệ</div>
-        <div *ngSwitchDefault>Trang chủ</div>
+        <div *ngSwitchCase="chucNang=='sp'">
+          <app-productlist></app-productlist>
+        </div>
+        <div *ngSwitchCase="chucNang=='lh'">
+          <app-lienhe></app-lienhe>
+        </div>
+        <div *ngSwitchCase="chucNang=='ct'">
+          <app-productdetail [sp]="spDangXem"></app-productdetail>
+        </div>
+        <div *ngSwitchDefault>
+          <app-productlist (capnhatidSP)="ganSP($event)"></app-productlist>
+        </div>
       </div>
     </article>
-    <aside class="col-md-3 bg-secondary"></aside>
+    <aside class="col-md-3 bg-secondary">
+      <div [ngSwitch]="true">
+        <div *ngSwitchCase="chucNang=='dn'">
+          <app-dangnhap></app-dangnhap>
+        </div>
+      </div>
+    </aside>
   </main>
   <footer class="bg-dark text-white text-center">LNS LUNAS</footer>
 </div>
