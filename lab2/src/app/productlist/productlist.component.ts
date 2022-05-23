@@ -59,6 +59,7 @@ export class ProductlistComponent implements OnInit {
       starRate:4.6
     }
   ]
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -67,8 +68,8 @@ export class ProductlistComponent implements OnInit {
 
   tukhoa:string='';
   listProduct:ISanpham[]=[];
-  locSP(){
-    console.log(this.tukhoa);
-    this.products = this.listProduct.filter(p=>p.tensp.includes(this.tukhoa))
-  }
+  // locSP(){
+  //   console.log(this.searchText);
+  //   this.products = this.listProduct.filter(p=>p.tensp.includes(this.searchText))
+  // }
 }

@@ -66,4 +66,7 @@ export class SanPhamService {
   getMotSanPham(id:number=0){
     return this.products.find(sp=>sp.id==id);
   }
+  themSanPham(sp:ISanpham=<ISanpham>{}){
+    this.products.push(sp);
+  }
 }

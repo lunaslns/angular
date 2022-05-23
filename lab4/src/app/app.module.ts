@@ -9,6 +9,10 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ProductDsComponent } from './product-ds/product-ds.component';
+import { ProductThemComponent } from './product-them/product-them.component';
+import { ProductSuaComponent } from './product-sua/product-sua.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
     ProductlistComponent,
     ProductdetailComponent,
     DangnhapComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ProductDsComponent,
+    ProductThemComponent,
+    ProductSuaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

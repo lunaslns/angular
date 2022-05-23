@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">DANH SÁCH SẢN PHẨM
         <label class="float-end">
-            <input name="tk" [(ngModel)]="tukhoa" (keyup)="locSP()">
+            <input name="search" [(ngModel)]="tukhoa" autocomplete="off"  placeholder="&#61442; Tìm kiếm...">
             <em class="text-danger">{{tukhoa}}</em>
         </label>
     </div>
@@ -18,7 +18,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="tr-bottom" *ngFor="let p of products">
+            <tr class="tr-bottom" *ngFor="let p of products | filter:tukhoa">
                 <td><img src="{{p.urlImage}}" height="50"></td>
                 <td>{{p.tensp | uppercase}}</td>
                 <td>{{p.code}}</td>
