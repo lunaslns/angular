@@ -1,0 +1,10 @@
+<form action="" class="col-8 m-auto border border-primary p-2">
+    <p>Tên SP<input type="text" name="tensp" [(ngModel)]="sp.tensp" id="" class="form-control"></p>
+    <p>Giá<input type="text" name="giasp" [(ngModel)]="sp.giasp" id="" class="form-control"></p>
+    <p>Code<input type="text" name="code" [(ngModel)]="sp.code" id="" class="form-control"></p>
+    <p>Ngày<input type="date" name="ngay" [(ngModel)]="sp.ngay" id="" class="form-control"></p>
+    <p>Mô tả<textarea class="form-control"></textarea></p>
+    <p><button name="mota" [(ngModel)]="sp.mota" class="btn btn-warning py-2 px-5" (click)="capnhatSP()">Thêm</button></p>
+</form>
+
+
