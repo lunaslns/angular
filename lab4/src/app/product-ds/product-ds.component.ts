@@ -3,11 +3,11 @@ import { ISanpham } from '../isanpham';
 import { SanPhamService } from '../san-pham.service';
 
 @Component({
-  selector: 'app-productlist',
-  templateUrl: './productlist.component.html',
-  styleUrls: ['./productlist.component.css']
+  selector: 'app-product-ds',
+  templateUrl: './product-ds.component.html',
+  styleUrls: ['./product-ds.component.css']
 })
-export class ProductlistComponent implements OnInit {
+export class ProductDsComponent implements OnInit {
 
   constructor(private spService:SanPhamService) { }
 
@@ -17,4 +17,8 @@ export class ProductlistComponent implements OnInit {
     this.listSP = this.spService.getSanPham();
   }
 
+  xoaSP(id:number=0){
+    this.spService.xoaSanPham(id);
+    return false;
+  }
 }

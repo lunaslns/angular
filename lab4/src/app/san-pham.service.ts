@@ -64,4 +64,18 @@ export class SanPhamService {
   getMotSanPham(id:number=0){
     return this.products.find(sp => sp.id==id);
   }
+
+  themSanPham(sp:ISanpham=<ISanpham>{}){
+    this.products.push(sp);
+  }
+
+  capnhatSanPham(sp:ISanpham=<ISanpham>{}){
+    let index = this.products.findIndex(p => p.id==sp.id);
+    this.products[index] = sp;
+  }
+
+  xoaSanPham(id:number=0){
+    let index = this.products.findIndex(p => p.id==id);
+    this.products.splice(index);
+  }
 }

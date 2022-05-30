@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ISanpham } from '../isanpham';
+import { SanPhamService } from '../san-pham.service';
 
 @Component({
   selector: 'app-productdetail',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductdetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private spService:SanPhamService) { }
+
+  idSP:number = Number(this.route.snapshot.params['id']);
+  sp = <ISanpham>{};
 
   ngOnInit(): void {
+    if(this.idSP<0) return;
+    let kq = this.spService.getMotSanPham(this.idSP);
+    if(kq==null) {
+      this.sp={} as ISanpham;
+    }else{
+      this.sp = kq as ISanpham;
+    }
   }
 
 }
