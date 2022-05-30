@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ISanpham } from './isanpham';
 
 @Component({
   selector: 'app-root',

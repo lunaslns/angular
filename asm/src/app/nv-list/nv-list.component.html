@@ -1,1 +1,17 @@
-<p>nv-list works!</p>
+<table class="table table-bordered border border-primary mt-3">
+    <caption align="top" class="bg-warning p-2">DANH SÁCH NHÂN VIÊN</caption>
+    <tr>
+        <th>id</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Phái</th>
+        <th>Khu vực</th>
+      </tr>
+      <tr *ngFor="let nv of listNhanVien">
+        <td>{{nv.id}}</td>
+        <td>{{nv.ho}}{{nv.ten}}</td>
+        <td>{{nv.ngaysinh}}</td>
+        <td>{{nv.phai}}</td>
+        <td>{{nv.khuvuc}}</td>
+      </tr>  
+</table>
