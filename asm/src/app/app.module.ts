@@ -20,6 +20,7 @@ import { ProductDsComponent } from './product-ds/product-ds.component';
 import { ProductThemComponent } from './product-them/product-them.component';
 import { ProductSuaComponent } from './product-sua/product-sua.component';
 import { FormsModule } from '@angular/forms';
+import { DuanDetailComponent } from './duan-detail/duan-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     ProductDetailComponent,
     ProductDsComponent,
     ProductThemComponent,
-    ProductSuaComponent
+    ProductSuaComponent,
+    DuanDetailComponent
   ],
   imports: [
     BrowserModule,

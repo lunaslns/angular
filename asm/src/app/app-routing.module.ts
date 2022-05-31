@@ -12,6 +12,7 @@ import { ProductThemComponent } from './product-them/product-them.component';
 import { ProductSuaComponent } from './product-sua/product-sua.component';
 import { TaskThemComponent } from './task-them/task-them.component';
 import { DuanThemComponent } from './duan-them/duan-them.component';
+import { DuanDetailComponent } from './duan-detail/duan-detail.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'admin/themsp', component:ProductThemComponent},
   {path:'admin/suasp/:id', component:ProductSuaComponent},
   {path: 'admin/themtask', component:TaskThemComponent},
-  {path: 'admin/themduan', component:DuanThemComponent}
+  {path: 'admin/themduan', component:DuanThemComponent},
+  {path: 'duan/:id', component:DuanDetailComponent}
 ];
 
 @NgModule({

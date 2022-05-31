@@ -16,9 +16,11 @@ export class ProductDsComponent implements OnInit {
   ngOnInit(): void {
     this.listSP = this.spService.getSanPham();
   }
-
-  xoaSP(id:number=0){
-    this.spService.xoaSanPham(id);
+ 
+  xoaSP(id:number=1){
+    if(confirm('Bạn có chắc chắn xóa')==true){
+      this.spService.xoaSanPham(id);
+    }
     return false;
   }
 }
