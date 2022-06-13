@@ -1,12 +1,15 @@
-<table class="table table-bordered border border-primary mt-3">
-    <caption align="top" class="bg-warning p-2">DANH SÁCH NHÂN VIÊN</caption>
-    <tr>
-        <th>id</th>
-        <th>Họ tên</th>
-        <th>Ngày sinh</th>
-        <th>Phái</th>
-        <th>Khu vực</th>
-      </tr>
+<table class="table table-bordered">
+    <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH NHÂN VIÊN</caption>
+    <table class="table table-bordered table-hover mt-3">
+      <thead class="bg-warning">
+        <tr>
+          <th>ID</th>
+          <th>Họ tên</th>
+          <th>Ngày sinh</th>
+          <th>Giới tính</th>
+          <th>Khu vực</th>
+        </tr>
+      </thead>
       <tr *ngFor="let nv of listNhanVien">
         <td>{{nv.id}}</td>
         <td>{{nv.ho}} {{nv.ten}}</td>
@@ -17,4 +20,5 @@
         </td>
         <td>{{nv.khuvuc}}</td>
       </tr>  
+    </table>
 </table>

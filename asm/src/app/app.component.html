@@ -14,7 +14,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Giới thiệu</a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Sản Phẩm
               </a>
@@ -22,13 +22,13 @@
                 <li><a class="dropdown-item" href="#">Thêm sản phẩm</a></li>
                 <li><a class="dropdown-item" href="#" routerLink="/sanpham">Danh sách sản phẩm</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dự Án
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#" routerLink="/admin/themduan">Thêm dự án</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themduan">Thêm dự án</a></li> -->
                 <li><a class="dropdown-item" href="#" routerLink="/duan">Danh sách dự án</a></li>
               </ul>
             </li>
@@ -37,7 +37,7 @@
                 Task
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#" routerLink="/admin/themtask">Thêm task</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themtask">Thêm task</a></li> -->
                 <li><a class="dropdown-item" href="#" routerLink="/task">Danh sách task</a></li>
               </ul>
             </li>
@@ -46,8 +46,8 @@
                 Nhân Viên
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Thêm nhân viên</a></li>
-                <li><a class="dropdown-item" href="#" routerLink="/nhanvien">Danh sách nhân viên</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themnv">Thêm nhân viên</a></li> -->
+                <li><a class="dropdown-item" href="#" routerLink="/nv">Danh sách nhân viên</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -55,10 +55,14 @@
                 Tài khoản
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#" routerLink="/dangnhap">Đăng nhập</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/dangnhap">Đăng nhập</a></li>
                 <li><a class="dropdown-item" href="#">Đăng ký</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li> -->
+                <li class="nav-item"><a class="nav-link" routerLink="download" href="#">Download</a> </li>
+                <li class="nav-item"><a class="nav-link" routerLink="dangky" href="#">Đăng ký</a> </li>
+                <li class="nav-item"><a class="nav-link" routerLink="dangnhap" href="#">Đăng nhập</a> </li>
+                <li class="nav-item"><a class="nav-link" routerLink="doipass" href="#">Đổi pass</a> </li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -66,10 +70,20 @@
                 Quản trị
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#" routerLink="/admin/themsp">Thêm sản phẩm</a></li>
-                <li><a class="dropdown-item" href="#" routerLink="/admin/sp">Danh sách sản phẩm</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themsp">Thêm sản phẩm</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/admin/sp">Danh sách sản phẩm</a></li> -->
+                <li><a class="dropdown-item" href="#" routerLink="/admin/duan">Quản trị dự án</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/admin/task">Quản trị task</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/admin/nv">Quản trị nhân viên</a></li>
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themduan">Thêm dự án</a></li> -->
+                <!-- <li><a class="dropdown-item" href="#" routerLink="/admin/themtask">Thêm task</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/admin/themnv">Thêm nhân viên</a></li> -->
               </ul>
             </li>
+            <!-- <li class="nav-item"><a class="nav-link" routerLink="download" href="#">Download</a> </li>
+            <li class="nav-item"><a class="nav-link" routerLink="dangky" href="#">Đăng ký</a> </li>
+            <li class="nav-item"><a class="nav-link" routerLink="dangnhap" href="#">Đăng nhập</a> </li>
+            <li class="nav-item"><a class="nav-link" routerLink="doipass" href="#">Đổi pass</a> </li> -->
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Từ khóa" aria-label="Search">
@@ -86,11 +100,21 @@
     </ol>
   </nav>
   <main class="d-flex" style="min-height: 450px;">
-    <aside class="col-md-3 bg-secondary" id="cottrai"> </aside>
-    <article class="col-md-6 bg-info" id="cotgiua">
+    <aside class="col-md-2 bg-secondary" id="cottrai">
+      <div class="">
+        <img src="" alt="error">
+        <span></span>
+      </div>
+    </aside>
+    <article class="col-md-8 bg-info" id="cotgiua">
       <router-outlet></router-outlet>
+      <app-duan-sua [da]="da"></app-duan-sua>
+      <app-du-an-admin (chonDA)="ganDA($event)"></app-du-an-admin>
+      <!-- <app-du-an-admin (chonDuAn)="ganDuAn($event)"></app-du-an-admin>
+      <app-nv-sua [nv]="nv"></app-nv-sua>
+      <app-nhan-vien-admin (chonNhanVien)="ganNhanVien($event)"></app-nhan-vien-admin> -->
     </article>
-    <aside class="col-md-3 bg-secondary" id="cotphai">
+    <aside class="col-md-2 bg-secondary" id="cotphai">
 
     </aside>
   </main>

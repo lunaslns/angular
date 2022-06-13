@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DuLieuService } from '../du-lieu.service';
 
 @Component({
   selector: 'app-nv-sua',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NvSuaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private d:DuLieuService) { }
 
   ngOnInit(): void {
   }
 
+  @Input() nv:any;
+  nvEdit(nv:any){
+    this.d.editNhanVien(nv).subscribe(data =>{
+      alert('Sửa thành công');
+      console.log("Sửa", data);
+      
+    })
+  }
 }

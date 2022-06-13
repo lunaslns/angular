@@ -1,9 +1,31 @@
-<form class="mt-3">
+<form #frm1="ngForm" #frmDA="ngForm" class="mt-3" (ngSubmit)="dathem(frmDA.value)">
     <h5 class="bg-warning p-2">THÊM DỰ ÁN</h5>
-    <p class="mb-3">Tên dự án <input class="form-control"></p>
-    <p class="mb-3">Ngày Start <input class="form-control"></p>
-    <p class="mb-3">Tiền <input class="form-control"></p>
-    <p class="mb-3">Leader <select class="form-control"></select></p>
-    <p class="mb-3">Thành viên <select multiple size="5" class="form-control"></select></p>
-    <p><button class="btn btn-primary p-2">Thêm dự án</button></p>
+    <p class="mb-3">ID<input name="id" ngModel readonly class="form-control" type="number"></p>
+    <p class="mb-3">Tên dự án <input name="nameDuAn" type="text" ngModel required minlength="10" #loiten="ngModel" class="form-control"></p>
+    <!-- <em *ngIf="loiten.invalid||loiten.errors?.['minlength']['actualLength']<loiten.errors?.['minlength']['requiredLength']" class="text-danger"> 
+        * Thông tin này không được để trống và ít nhất phải có 10 ký tự.
+    </em> -->
+    <em *ngIf="frm1.controls['nameDuAn']?.errors" class="text-danger" >
+        * Thông tin này không được để trống và ít nhất phải có 10 ký tự.
+    </em>
+    <p class="mb-3">Ngày bắt đầu <input ngModel name="dateStart" type="date" class="form-control"></p>
+    <p class="mb-3">Giá <input ngModel name="price" required #loiprice="ngModel" minlength="7" maxlength="20" type="number" class="form-control"></p>
+    <!-- <em *ngIf="loiprice.invalid||loiprice.errors?.['minlength']['actualLength']<loiprice.errors?.['minlength']['requiredLength']" class="text-danger"> 
+        Thông tin này nhập bằng số và ít nhất phải có 7 con số.
+    </em> -->
+    <em *ngIf="frm1.controls['price']?.errors" class="text-danger" >
+        * Thông tin này nhập bằng số và ít nhất phải có 7 chữ số.
+    </em>
+    <p class="mb-3">Leader <select ngModel name="leader" class="form-control">
+        <option value="0">Lê Hữu Quân</option>
+        <option value="1">Nguyễn Bảo Toàn</option>
+    </select></p>
+    <p class="mb-3">Thành viên <select ngModel name="member" multiple size="5" class="form-control">
+        <option value="0">Lê Hữu Quân</option>
+        <option value="1">Nguyễn Bảo Toàn</option>
+    </select></p>
+    <p><button type="submit" class="btn btn-success p-2">Thêm dự án</button></p>
+    <p>{{frm1.value|json}}</p>
+    <p>{{frm1.value.ten}}</p>
+    <p>{{frm1.value.ngay}}</p>
 </form>

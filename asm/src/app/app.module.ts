@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,8 +20,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductDsComponent } from './product-ds/product-ds.component';
 import { ProductThemComponent } from './product-them/product-them.component';
 import { ProductSuaComponent } from './product-sua/product-sua.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DuanDetailComponent } from './duan-detail/duan-detail.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { DuAnAdminComponent } from './du-an-admin/du-an-admin.component';
+import { NhanVienAdminComponent } from './nhan-vien-admin/nhan-vien-admin.component';
+import { DangkyComponent } from './dangky/dangky.component';
+import { DoipassComponent } from './doipass/doipass.component';
+import { DownloadComponent } from './download/download.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +48,20 @@ import { DuanDetailComponent } from './duan-detail/duan-detail.component';
     ProductDsComponent,
     ProductThemComponent,
     ProductSuaComponent,
-    DuanDetailComponent
+    DuanDetailComponent,
+    TaskDetailComponent,
+    DuAnAdminComponent,
+    NhanVienAdminComponent,
+    DangkyComponent,
+    DoipassComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

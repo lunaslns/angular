@@ -15,7 +15,7 @@
         <td [innerText]="p.ngay|date:'dd/MM/Y'"></td>
         <td>{{p.giasp|currency: '$'}}</td>
         <td>
-            <a href="#" [routerLink]="['/admin/suasp', p.id]">Sửa</a>
+            <button class="bg-success btn btn-primary"><a href="#" [routerLink]="['/admin/suasp', p.id]">Sửa</a></button>
             <a href="#" (click)="xoaSP(p.id)">Xóa</a>
         </td>
     </tr>

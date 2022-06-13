@@ -1,0 +1,11 @@
+*{
+    text-decoration: none;
+}
+
+a{
+    color: var(--bs-dark);
+}
+
+a:hover{
+    color: var(--bs-primary);
+}

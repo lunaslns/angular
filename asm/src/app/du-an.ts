@@ -1,8 +1,8 @@
 export interface DuAn {
     id:number,
-    tenDuAn: string,
-    ngayStart: string,
-    tien:number,
+    nameDuAn: string,
+    dateStart: string,
+    price:number,
     leader:number,
-    thanhvien:number[]
+    member:number[]
 }

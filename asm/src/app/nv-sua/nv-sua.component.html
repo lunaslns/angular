@@ -1,1 +1,10 @@
-<p>nv-sua works!</p>
+<form class="mt-3" #frmEditNV="ngForm" (ngSubmit)="nvEdit(frmEditNV.value)">
+    <h5 class="bg-warning p-2">SỬA NHÂN VIÊN</h5>
+    <p class="mb-3">ID <input [(ngModel)]="nv.id" class="form-control" readonly type="number"></p>
+    <p class="mb-3">Họ <input [(ngModel)]="nv.ho" class="form-control" type="text"></p>
+    <p class="mb-3">Tên <input [(ngModel)]="nv.ten" class="form-control" type="text"></p>
+    <p class="mb-3">Ngày sinh <input [(ngModel)]="nv.ngaysinh" type="date" name="" id="" class="form-control"></p>
+    <p class="mb-3">Giới tính <input [(ngModel)]="nv.phai" type="checkbox" name="" id=""></p>
+    <p class="mb-3">Khu vực <input [(ngModel)]="nv.khuvuc" class="form-control" type="text"></p>
+    <p><button class="btn btn-primary p-2">Sửa</button></p>
+</form>

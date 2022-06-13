@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+    <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH NHÂN VIÊN</caption>
+    <table class="table table-bordered table-hover mt-3">
+      <thead class="bg-warning">
+        <tr>
+          <th>ID</th>
+          <th>Họ tên</th>
+          <th>Ngày sinh</th>
+          <th>Giới tính</th>
+          <th>Khu vực</th>
+          <th>Xóa</th>
+          <th>Sửa</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let nv of listNhanVien; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{nv.ho}} {{nv.ten}}</td>
+        <td>{{nv.ngaysinh|date:'dd/MM/Y'}}</td>
+        <td>
+          <span *ngIf="nv.phai==true">Nam</span> 
+          <span *ngIf="nv.phai==false">Nữ</span>
+        </td>
+        <td>{{nv.khuvuc}}</td>
+        <td><button type="submit" class="bg-success btn btn-success"><a href="#" routerLink="/admin/suanv/{{nv.id}}" (click)="suaNhanVien(nv)">Sửa</a></button></td>
+        <td><button type="submit" class="bg-danger btn btn-danger"><a href="#" (click)="xoaNhanVien(nv.id)">Xóa</a></button></td>
+      </tr>  
+      <button type="submit" class="btn btn-primary mt-3"><a href="#" routerLink="/admin/themnv">Thêm nhân viên</a></button>
+    </table>
+</table>
+

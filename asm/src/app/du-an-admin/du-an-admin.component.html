@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover">
+    <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH DỰ ÁN</caption>
+    <table class="table table-bordered table-hover mt-3">
+        <thead class="bg-warning">
+            <tr>
+                <th>ID</th>
+                <th>Tên dự án</th>
+                <th>Ngày bắt đầu</th>
+                <th>Giá</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let da of listDuAn; let i = index">
+            <td>{{i+1}}</td>
+            <td><a href="#" [routerLink]="['/duan', da.id]">{{da.nameDuAn}}</a></td>
+            <td>{{da.dateStart|date: 'dd-MM-Y'}}</td>
+            <td>{{da.price}} VNĐ</td>
+            <td><button type="submit" class="bg-success btn btn-success"><a href="#" (click)="suaDA(da)">Sửa</a></button></td>
+            <td><button type="submit" class="bg-danger btn btn-danger"><a href="#" (click)="xoaDuAn(da.id)">Xóa</a></button></td>
+        </tr>
+        <button type="submit" class="btn btn-primary mt-3"><a href="#" routerLink="/admin/addduan">Thêm dự án</a></button>
+    </table>
+</table>
+

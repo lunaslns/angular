@@ -14,5 +14,4 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.listSP = this.spService.getSanPham();
   }
-
 }

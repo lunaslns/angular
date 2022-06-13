@@ -1,11 +1,14 @@
-<form class="mt-3">
+<form class="mt-3" [formGroup]="frm1">
     <h5 class="bg-warning p-2">THÊM TASK</h5>
-    <p class="mb-3">Tên task <input class="form-control"></p>
-    <p class="mb-3">Mô tả <textarea class="form-control"></textarea></p>
-    <p class="mb-3">Dự án <select class="form-control"></select></p>
-    <p class="mb-3">Người thực hiện <select class="form-control"></select></p>
-    <p class="mb-3">Độ ưu tiên <select class="form-control"></select></p>
-    <p class="mb-3">Trạng thái <select class="form-control"></select></p>
+    <p class="mb-3">Tên task <input class="form-control" formControlName="ten"></p>
+    <p class="mb-3">Mô tả <textarea class="form-control" formControlName="mota"></textarea></p>
+    <p class="mb-3">Dự án <select class="form-control" formControlName="duan"></select></p>
+    <p class="mb-3">Người thực hiện <select class="form-control" formControlName="nguoithuchien"></select></p>
+    <p class="mb-3">Độ ưu tiên <select class="form-control" formControlName="uutien"></select></p>
+    <p class="mb-3">Trạng thái <select class="form-control" formControlName="trangthai"></select></p>
     <p><button class="btn btn-primary p-2">Thêm Task</button></p>
+    <p>{{frm1.value|json}}</p>
+    <p>{{frm1.value.ten}}</p>
+    <p>{{frm1.value.mota}}</p>
 </form>
 

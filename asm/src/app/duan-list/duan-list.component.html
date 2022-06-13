@@ -1,15 +1,19 @@
-<table class="table table-bordered border border-primary mt-3">
-    <caption align="top" class="bg-warning p-2">DANH SÁCH DỰ ÁN</caption>
-    <tr>
-        <th>id</th>
-        <th>Tên dự án</th>
-        <th>Ngày start</th>
-        <th>Tiền</th>
-    </tr>
-    <tr *ngFor="let da of listDuAn">
-        <td>{{da.id}}</td>
-        <td><a href="#" [routerLink]="['/duan', da.id]">{{da.tenDuAn}}</a></td>
-        <td>{{da.ngayStart|date: 'dd/MM/Y'}}</td>
-        <td>{{da.tien}}</td>
-    </tr>
+<table class="table table-bordered table-hover">
+    <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH DỰ ÁN</caption>
+    <table class="table table-bordered table-hover mt-3">
+        <thead class="bg-warning">
+            <tr>
+                <th>ID</th>
+                <th>Tên dự án</th>
+                <th>Ngày bắt đầu</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let da of listDuAn; let i = index">
+            <td>{{i+1}}</td>
+            <td><a href="#" [routerLink]="['/duan', da.id]">{{da.nameDuAn}}</a></td>
+            <td>{{da.dateStart|date: 'dd-MM-Y'}}</td>
+            <td>{{da.price}} VNĐ</td>
+        </tr>
+    </table>
 </table>

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'asm';
+  da:any;
+  ganDA(da:any){
+    this.da = da;
+    console.log(this.da);
+  }
+  nv:any;
+  ganNhanVien(nv:any){
+    this.nv = nv;
+    console.log(this.nv);
+  }
 }
