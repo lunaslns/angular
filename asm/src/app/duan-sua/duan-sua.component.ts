@@ -18,6 +18,6 @@ export class DuanSuaComponent implements OnInit {
     this.d.editDuAn(da).subscribe(data =>{
       alert('Sửa thành công');
       console.log("Sửa", data);
-    })
+    });
   }
 }

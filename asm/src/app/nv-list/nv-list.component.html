@@ -1,24 +1,24 @@
-<table class="table table-bordered">
-    <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH NHÂN VIÊN</caption>
-    <table class="table table-bordered table-hover mt-3">
-      <thead class="bg-warning">
-        <tr>
-          <th>ID</th>
-          <th>Họ tên</th>
-          <th>Ngày sinh</th>
-          <th>Giới tính</th>
-          <th>Khu vực</th>
-        </tr>
-      </thead>
-      <tr *ngFor="let nv of listNhanVien">
-        <td>{{nv.id}}</td>
-        <td>{{nv.ho}} {{nv.ten}}</td>
-        <td>{{nv.ngaysinh|date:'dd/MM/Y'}}</td>
-        <td>
-          <span *ngIf="nv.phai==true">Nam</span> 
-          <span *ngIf="nv.phai==false">Nữ</span>
-        </td>
-        <td>{{nv.khuvuc}}</td>
-      </tr>  
-    </table>
+<table class="table table-info table-striped">
+  <!-- <caption align="top" class="bg-warning p-2 text-center">DANH SÁCH NHÂN VIÊN</caption> -->
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Họ tên</th>
+      <th>Ngày sinh</th>
+      <th>Giới tính</th>
+      <th>Khu vực</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let nv of listNhanVien">
+      <td>{{nv.id}}</td>
+      <td>{{nv.ho}} {{nv.ten}}</td>
+      <td>{{nv.ngaysinh|date:'dd/MM/Y'}}</td>
+      <td>
+        <span *ngIf="nv.phai==true">Nam</span> 
+        <span *ngIf="nv.phai==false">Nữ</span>
+      </td>
+      <td>{{nv.khuvuc}}</td>
+    </tr>  
+  </tbody>
 </table>

@@ -12,10 +12,6 @@ export class DuanListComponent implements OnInit {
   constructor(private _http:HttpClient, private d:DuLieuService) { }
   listDuAn:any;
   ngOnInit(): void {
-    // this._http.get('http://localhost:3000/duan').subscribe(data=>{
-    //   this.listDuAn = data;
-    //   console.log("Dự án: ", data);  
-    // })
     this.listDuAn = this.d.getDuAn().subscribe(data=>this.listDuAn = data)
   }
   xoaDA(id:number){
@@ -23,11 +19,11 @@ export class DuanListComponent implements OnInit {
       this.d.deleteDuAn(id).subscribe(data => alert('Xóa thành công'))
     }
   }
-  @Output() chonDuAn = new EventEmitter();
-  suaDA(da:any){
-    console.log(da);
-    this.chonDuAn.emit(da);
-  }
+  // @Output() chonDuAn = new EventEmitter();
+  // suaDA(da:any){
+  //   console.log(da);
+  //   this.chonDuAn.emit(da);
+  // }
   // listDuAn:DuAn[] = [
   //   {id: 1, tenDuAn: 'Quản lý trại heo', ngayStart: '2022-03-01', tien: 67000000, leader: 1, thanhvien: [1,3,4]},
   //   {id: 2, tenDuAn: 'Cây xanh công viên', ngayStart: '2022-04-02', tien: 98500000, leader: 1, thanhvien: [1,3,4]},

@@ -19,6 +19,9 @@ export class DuLieuService {
   editDuAn(da:any){
     return this.h.put('http://localhost:3000/duan/' + da.id, da);
   }
+  getTask(){
+    return this.h.get('http://localhost:3000/task');
+  }
   getNhanVien(){
     return this.h.get('http://localhost:3000/nhanvien');
   }

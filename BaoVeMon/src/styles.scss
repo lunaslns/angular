@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: var(--bs-gray);
+    }
+    &::-webkit-scrollbar-thumb{
+        background: var(--bs-info);
+        border-radius: .5rem;
+    }
+}
+
+nav{
+    font-size: 1.6rem;
+    .navbar-brand{
+        font-size: 2.4rem;
+    }
+    .nav-link{
+        color: var(--bs-light);
+        &:hover{
+            color: yellow;
+        }
+    }
+}
+
+main{
+    font-size: 1.6rem;
+    h4{
+        font-size: 1.8rem;
+    }
+    .item-title{
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    .item-text{
+        font-size: 1.6rem;
+    }
+}
+
+footer{
+    font-size: 1.6rem;
+    font-weight: bold;
+}

@@ -1,0 +1,13 @@
+.item{
+    border: .2rem solid var(--bs-primary);
+    border-radius: 1rem;
+    &-content{
+        padding: .5rem;
+    }
+}
+
+h4{
+    background: var(--bs-yellow);
+    text-transform: uppercase;
+    padding: .5rem;
+}

@@ -1,12 +1,22 @@
 <form class="mt-3" #frmEditDA="ngForm" (ngSubmit)="daEdit(frmEditDA.value)">
     <h5 class="bg-warning p-2">SỬA DỰ ÁN</h5>
-    <p><label>ID</label><input name="id" [(ngModel)]="da.id" readonly class="form-control" type="text"></p>
-    <p class="mb-3">Tên dự án <input name="tenda" class="form-control" formControlName="ten" [(ngModel)]="da.nameDuAn"></p>
-    <p class="mb-3">Ngày bắt đầu <input name="ngayda" class="form-control" formControlName="ngay" [(ngModel)]="da.dateStart"></p>
-    <p class="mb-3">Giá <input name="giada" class="form-control" formControlName="gia" [(ngModel)]="da.price"></p>
-    <p class="mb-3">Leader <select name="leaderda" class="form-control" formControlName="leader" [(ngModel)]="da.leader">
-        <option value="1">hsjfgj</option>
+    <p>
+        <label>ID</label>
+        <input name="id" [(ngModel)]="da.id" readonly class="form-control" type="text">
+    </p>
+    <p class="mb-3">Tên dự án 
+        <input name="nameDuAn" class="form-control" [(ngModel)]="da.nameDuAn" type="text">
+    </p>
+    <p class="mb-3">Ngày bắt đầu 
+        <input name="dateStart" class="form-control" [(ngModel)]="da.dateStart">
+    </p>
+    <p class="mb-3">Giá 
+        <input name="price" class="form-control" [(ngModel)]="da.price">
+    </p>
+    <p class="mb-3">Leader 
+        <select name="leader" class="form-control" [(ngModel)]="da.leader">
+        <option value="1"></option>
     </select></p>
-    <p class="mb-3">Thành viên<select name="thanhvienda" multiple size="5" class="form-control" formControlName="thanhvien" [(ngModel)]="da.member"></select></p>
-    <p><button class="btn btn-primary p-2">Thêm dự án</button></p>
+    <p class="mb-3">Thành viên<select name="member" multiple size="5" class="form-control" [(ngModel)]="da.member"></select></p>
+    <p><button class="btn btn-primary p-2">Sửa dự án</button></p>
 </form>

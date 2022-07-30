@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,12 @@ export class AppComponent {
   ganNhanVien(nv:any){
     this.nv = nv;
     console.log(this.nv);
+  }
+  constructor(private auth:AuthService){}
+  thoat(){
+    this.auth.thoat();
+  }
+  daDangNhap(){
+    return this.auth.daDangNhap();
   }
 }

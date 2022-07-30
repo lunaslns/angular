@@ -12,10 +12,10 @@ export class DuanThemComponent implements OnInit {
   constructor(private fbuilder:FormBuilder, private d:DuLieuService) { }
   frm1!:FormGroup;
   ngOnInit(): void {
-    this.frm1 = this.fbuilder.group({
+    this.frm1 = new FormGroup({
       nameDuAn: new FormControl('', [Validators.minLength(10), Validators.maxLength(50)]),
       dateStart: new FormControl('', [Validators.required]),
-      price: new FormControl('', [Validators.min(7)])
+      price: new FormControl('', [Validators.min(1000000), Validators.max(1000000000000000)])
     })
   }
   dathem(da:any){

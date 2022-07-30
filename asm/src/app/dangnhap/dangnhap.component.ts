@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import * as moment  from 'moment';
 
 @Component({
   selector: 'app-dangnhap',
@@ -12,27 +13,28 @@ export class DangnhapComponent implements OnInit {
 
   constructor(private auth:AuthService, private router:Router) { }
   frm1!:FormGroup;
-
   ngOnInit(): void {
     this.frm1 = new FormGroup({
-      username: new FormControl('teonv'),
-      password: new FormControl('123'),
+      un: new FormControl('lns', [Validators.minLength(3), Validators.maxLength(10)]),
+      pw: new FormControl('123', Validators.minLength(6)),
     });
   }
 
-  xulyDN(data:any){
-    this.auth.login(data.un, data.pw).subscribe(()=>{
-      console.log("Đăng nhập thành công");
-      this.router.navigateByUrl('/');
-    })
-  }
-
-
-  username:string='';
-  password:string='';
-  xuly(d:any){
-    console.log("Data: ",d);
-    console.log("Username=", this.username);
-    console.log("Password=", this.password);
-  }
+  xulyDN(data:any){    
+    console.log(data, data.un , data.pw);
+    this.auth.login( data.un, data.pw).subscribe( 
+      res =>{          
+          var d = JSON.parse(res);
+          console.log("Đăng nhập thành công ", res);          
+          const expiresAt = moment().add(d.expiresIn,'second');
+           localStorage.setItem('id_token', d.idToken);
+           localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
+           this.router.navigateByUrl('/');
+      },
+      error => {
+        console.log('oops', error);
+        this.router.navigateByUrl('/dangnhap');
+      }
+    )
+   } //xulyDN
 }

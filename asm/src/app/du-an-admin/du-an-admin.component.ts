@@ -23,4 +23,9 @@ export class DuAnAdminComponent implements OnInit {
     console.log(da);
     this.chonDA.emit(da);
   }
+  da:any;
+  ganDA(da:any){
+    this.da=da;
+    console.log(this.da);
+}
 }

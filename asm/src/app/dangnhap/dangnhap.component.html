@@ -1,10 +1,16 @@
-<form #frm1="ngForm" class="col-6 m-auto" (ngSubmit)="xulyDN(frm1.value)">
+<form  class="col-6 m-auto" (ngSubmit)="xulyDN(frm1.value)" [formGroup]="frm1">
    <h4>THÀNH VIÊN ĐĂNG NHẬP</h4>
    <p> <label>Username</label>
-       <input name="un" ngModel class="form-control" type="text"> 
+       <input name="un" formControlName="un"  ngModel class="form-control" type="text"> 
+       <em *ngIf="frm1.controls['un']?.errors" class="text-danger" >
+        Username phải dài từ 3 đến 10 ký tự.
+      </em>
    </p>
    <p> <label>Password</label>
-       <input name="pw" ngModel class="form-control" type="password"> 
+       <input name="pw" formControlName="pw" ngModel class="form-control" type="password"> 
+       <em *ngIf="frm1.controls['pw']?.errors?.['minlength']['actualLength']<frm1.controls['pw']?.errors?.['minlength']['requiredLength']" class="text-danger">
+    Mật khẩu còn ngắn lắm
+  </em>
    </p>
    <p><button type="submit" class="btn btn-success">Đăng nhập</button></p>
 </form> 
